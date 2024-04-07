@@ -13,12 +13,13 @@ form.addEventListener("submit",function(event) {
 	
 	let radius = parseFloat(document.querySelector('#radius').value);
 	
-	if (!isNaN(radius)) {
+	if (!isNaN(radius) && radius >= 0) {
 		let volume_of_sphere = volume_sphere(radius);
 		document.querySelector('#volume').value = volume_of_sphere;
 	}
 	else{
-		alert('Please enter a valid number for the radius.');
+		alert('NaN');
+		document.querySelector('#volume').value = "NaN"
 	}
 	
 })
